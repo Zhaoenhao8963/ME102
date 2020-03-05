@@ -117,10 +117,14 @@ H, S, V = cv2.split(HSV)    #分离 HSV 三通道
 Lowerred0 = np.array([11,43,35])
 Upperred0 = np.array([34,255,255])
 mask1 = cv2.inRange(HSV, Lowerred0, Upperred0)
-cv2.imshow("sun",mask1)
-cnts=cv2.findContours(mask1,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
-print(cnts)
-# cv2.drawContours(img,[np.int0(box)],-1,(0,255,255),2)
-# cv2.inshow("counters",img)
+
+contours,hierarchy = cv2.findContours(mask1,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)#得到轮廓信息
+
+cv2.drawContours(img, contours, -1, (255, 0, 0), 2)
+# 显示图像
+cv2.imshow("contours", img)
+cv2.waitKey()
+cv2.destroyAllWindows()
 ~~~
 
+![image-20200304211018100](project2-draw counters.assets/image-20200304211018100.png)
