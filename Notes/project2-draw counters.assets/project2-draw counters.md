@@ -127,4 +127,4 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ~~~
 
-![image-20200304211740777](project2-draw counters.assets/image-20200304211740777.png)
+<img src="project2-draw counters.assets/image-20200304213457288.png" alt="image-20200304213457288" style="zoom:10%;" />
